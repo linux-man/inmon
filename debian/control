@@ -1,0 +1,13 @@
+Source: inmon
+Maintainer: Caldas Lopes <joao.caldas.lopes@gmail.com>
+Section: python
+Priority: optional
+Build-Depends: dh-python, python3-setuptools, python3-all, debhelper (>= 9), python3-gi, python3-six, python3-xlib, python3-evdev
+Standards-Version: 3.9.6
+Homepage: https://launchpad.net/~caldas-lopes/+archive/ppa
+
+Package: inmon
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}, python3-gi, python3-six, python3-xlib, python3-evdev
+Description: An Input Monitor
+

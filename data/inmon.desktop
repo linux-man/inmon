@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=0.8
+Name=Inmon
+Exec=inmon
+Icon=inmon
+Comment=An Input Monitor
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Utility;

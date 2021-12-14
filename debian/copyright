@@ -1,27 +1,5 @@
-Inmon
-=====
-
-An Input Monitor
-
-*Inmon* was born out of the need to replace [key-mon](https://github.com/critiqjo/key-mon), a screencast utility that displays your keyboard and mouse status.
-
-## Changelog
-
-inmon (0.3-1) focal; urgency=low
-
-  * Initial Release
-
- -- Caldas Lopes <joao.caldas.lopes@gmail.com>  Tue, 14 Dec 2021 19:28:42 +0000
-
-## Third-Party Libraries
-
-[pynput](https://github.com/moses-palmer/pynput)
-
-### Binaries at [Releases](https://github.com/linux-man/inmon/releases) and 
-
-### License [GPL-3+](LICENSE)
-
-Copyright: 2021, Caldas Lopes    <joao.caldas.lopes@gmail.com>
+Copyright: 2017, Caldas Lopes    <joao.caldas.lopes@gmail.com>
+License: GPL-3+
 
     This package is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
