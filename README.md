@@ -17,7 +17,7 @@ inmon (0.3-1) focal; urgency=low
 
 [pynput](https://github.com/moses-palmer/pynput)
 
-### Binaries at [Releases](https://github.com/linux-man/inmon/releases) and 
+### Binaries at [Releases](https://github.com/linux-man/inmon/releases) and ppa:caldas-lopes/ppa
 
 ### License [GPL-3+](LICENSE)
 
