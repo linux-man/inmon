@@ -117,7 +117,7 @@ class Preferences(Gtk.Dialog):
 		self.page3.add(grid)
 		self.page3.add(Gtk.Label(_("Restart the application to activate the changes.")))
 		self.page3.add(Gtk.Label(""))
-		l = Gtk.Label(_("For Wayland, use 'pynput-evdev'. No mouse support. Install 'python3-evdev'. You must be a member of 'input' and 'tty' groups to access /dev/input: 'sudo usermod -a -G input tty USERNAME'"))
+		l = Gtk.Label(_("For Wayland, use 'pynput-evdev'. No mouse support. You must be a member of 'input' and 'tty' groups to access /dev/input: 'sudo usermod -a -G input USERNAME' and 'sudo usermod -a -G tty USERNAME'"))
 		l.set_line_wrap(True)
 		l.set_max_width_chars(20)
 		self.page3.add(l)

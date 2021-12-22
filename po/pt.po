@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-12 17:48+0000\n"
+"POT-Creation-Date: 2021-12-22 11:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: inmon.py:254 preferences.py:17
+#: inmon.py:263 preferences.py:17
 msgid "Preferences"
 msgstr "Preferências"
 
-#: inmon.py:257
+#: inmon.py:266
 msgid "Decoration"
 msgstr "Decoração"
 
-#: inmon.py:261
+#: inmon.py:270
 msgid "Background"
 msgstr "Fundo"
 
-#: inmon.py:265
+#: inmon.py:274
 msgid "Quit"
 msgstr "Sair"
 
@@ -135,17 +135,18 @@ msgstr ""
 
 #: preferences.py:118
 msgid "Restart the application to activate the changes."
-msgstr ""
+msgstr "Reinicie a aplicação para ativar as alterações."
 
 #: preferences.py:120
+#, fuzzy
 msgid ""
-"For Wayland, use 'pynput-evdev'. No mouse support. Install 'python3-evdev'. "
-"You must be a member of 'input' and 'tty' groups to access /dev/input: 'sudo "
-"usermod -a -G input tty USERNAME'"
+"For Wayland, use 'pynput-evdev'. No mouse support. You must be a member of "
+"'input' and 'tty' groups to access /dev/input: 'sudo usermod -a -G input "
+"USERNAME' and 'sudo usermod -a -G tty USERNAME'"
 msgstr ""
-"Para Wayland use 'pynput-evdev'. Sem suporte para rato. Instale 'python3-evdev'. "
-"Tem de ser membro dos grupos 'input' and 'tty' para ter acesso a /dev/input: 'sudo "
-"usermod -a -G input tty USERNAME'"
+"Para Wayland use 'pynput-evdev'. Sem suporte para rato. Tem de ser membro "
+"dos grupos 'input' and 'tty' para ter acesso a /dev/input: 'sudo usermod -a -G input "
+"USERNAME' e 'sudo usermod -a -G tty USERNAME'"
 
 #: preferences.py:124
 msgid "Interface"
@@ -166,12 +167,11 @@ msgid ""
 "Software Foundation, either version 3 of the License, or (at your option) "
 "any later version."
 msgstr ""
-"Este programa é um software livre; você pode redistribuí-lo e/ou "
-"modificá-lo sob os termos da Licença Pública Geral GNU como publicada "
-"pela Free Software Foundation; na versão 3 da Licença, ou "
-"(a seu critério) qualquer versão posterior."
+"Este programa é um software livre; você pode redistribuí-lo e/ou modificá-lo "
+"sob os termos da Licença Pública Geral GNU como publicada pela Free Software "
+"Foundation; na versão 3 da Licença, ou (a seu critério) qualquer versão "
+"posterior."
 
 #: preferences.py:147
 msgid "Credits"
 msgstr "Créditos"
-
