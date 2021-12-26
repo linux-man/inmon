@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import platform
 import gi
 
 gi.require_version("Gtk", "3.0")
@@ -121,7 +120,7 @@ class Preferences(Gtk.Dialog):
 		l.set_line_wrap(True)
 		l.set_max_width_chars(20)
 		self.page3.add(l)
-		if platform.system() == "Linux": self.notebook.append_page(self.page3, Gtk.Label(_("Interface")))
+		self.notebook.append_page(self.page3, Gtk.Label(_("Interface")))
 
 		self.page4 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, border_width = 10)
 

@@ -5,7 +5,6 @@ app_name = "Inmon"
 version = "0.3"
 
 import sys
-import platform
 import os
 import cairo
 import gi
@@ -71,7 +70,7 @@ class Inmon(Gtk.Window):
 		self.gui()
 
 #Monitor backend
-		if self.prefs["backend"] == "pynputevdev" and platform.system() == "Linux":
+		if self.prefs["backend"] == "pynputevdev":
 			os.environ['PYNPUT_BACKEND_KEYBOARD'] = "uinput"
 			os.environ['PYNPUT_BACKEND_MOUSE'] = "dummy"
 

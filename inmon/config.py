@@ -7,10 +7,7 @@ from configparser import ConfigParser
 class Config():
 	def __init__(self, app_name):
 		self.config = ConfigParser()
-		if 'APPDATA' in os.environ:
-			config_path = os.path.join(os.environ['APPDATA'], app_name)
-		else:
-			config_path = os.path.join(os.environ.get("XDG_CONFIG_HOME") or os.path.join(os.path.expanduser("~"), ".config"), app_name)
+		config_path = os.path.join(os.environ.get("XDG_CONFIG_HOME") or os.path.join(os.path.expanduser("~"), ".config"), app_name)
 
 		self.config_file = os.path.join(config_path, "preferences")
 		try: self.config.read(self.config_file)
