@@ -31,7 +31,7 @@ else:
 	from inmon.config import Config
 	from inmon.preferences import Preferences
 	THEME_PATH = os.path.join(sys.prefix, "share", "inmon", "themes")
-	
+
 
 class Inmon(Gtk.Window):
 	def __init__(self):
@@ -45,10 +45,6 @@ class Inmon(Gtk.Window):
 		self.offsetx = 0
 		self.offsety = 0
 		self.moving = False
-
-# Mouse Movement
-		self.x = 0
-		self.y = 0
 
 # Preferences
 		self.ini = Config(app_name)
