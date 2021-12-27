@@ -7,6 +7,12 @@ An Input Monitor
 
 ## Changelog
 
+inmon (0.4-1) focal; urgency=low
+
+  *  boppreh keyboard and mouse backend
+
+ -- Caldas Lopes <joao.caldas.lopes@gmail.com>  Mon, 27 Dec 2021 04:04:55 +0000
+
 inmon (0.3-1) focal; urgency=low
 
   * Initial Release
