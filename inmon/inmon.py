@@ -8,7 +8,7 @@
 # option) any later version.
 
 app_name = "Inmon"
-version = "0.3"
+version = "0.4"
 
 import sys
 import os
