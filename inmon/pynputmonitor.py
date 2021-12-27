@@ -30,26 +30,11 @@ class Monitor():
 				if not hasattr(key, "_kernel_name") and hasattr(key, "vk") and key.vk == None: key_code = "num_" + key_code
 			elif hasattr(key, "vk") and key.vk != None:
 				if hasattr(key, "_kernel_name"): # uinput backend
-					if int(key.vk) == 55: key_code = "num_*"
-					if int(key.vk) == 71: key_code = "num_7"
-					if int(key.vk) == 72: key_code = "num_8"
-					if int(key.vk) == 73: key_code = "num_9"
-					if int(key.vk) == 74: key_code = "num_-"
-					if int(key.vk) == 75: key_code = "num_4"
-					if int(key.vk) == 76: key_code = "num_5"
-					if int(key.vk) == 77: key_code = "num_6"
-					if int(key.vk) == 78: key_code = "num_+"
-					if int(key.vk) == 79: key_code = "num_1"
-					if int(key.vk) == 80: key_code = "num_2"
-					if int(key.vk) == 81: key_code = "num_3"
-					if int(key.vk) == 82: key_code = "num_0"
-					if int(key.vk) == 83: key_code = "num_."
-					if int(key.vk) == 96: key_code = "enter"
-					if int(key.vk) == 98: key_code = "num_/"
-					if int(key.vk) == 127: key_code = "menu"
-				if int(key.vk) == 65027: key_code = "alt_gr"
-				if int(key.vk) == 65437: key_code = "num_5" # num 5
-				if int(key.vk) == 65056: key_code = "tab" # shift+tab
+					key_code = {55: "num_*", 71: "num_7", 72: "num_8", 73: "num_9", 74: "num_-", 75: "num_4",
+					76: "num_5", 77: "num_6", 78: "num_+", 79: "num_1", 80: "num_2", 81: "num_3", 82: "num_0",
+					83: "num_.", 96: "enter", 98: "num_/", 127: "menu"}.get(int(key.vk), key_code)
+
+				key_code = {65027: "alt_gr", 65437: "num_5", 65056: "tab"}.get(int(key.vk), key_code)
 
 		elif hasattr(key, "_name_"):
 			key_code = key._name_
@@ -77,8 +62,7 @@ class Monitor():
 		self.callback("mouse", button._name_, pressed)
 
 	def on_scroll(self, x, y, dx, dy):
-		if dy > 0: self.callback("mouse", "scroll_down", True)
-		else: self.callback("mouse", "scroll_up", True)
+		self.callback("mouse", ("scroll_down", "scroll_up")[dy > 0], True)
 
 	def on_move(self, x, y):
 		self.callback("move", x, y)
