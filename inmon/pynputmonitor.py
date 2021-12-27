@@ -66,3 +66,6 @@ class Monitor():
 
 	def on_move(self, x, y):
 		self.callback("move", x, y)
+
+	def quit(self):
+		pass

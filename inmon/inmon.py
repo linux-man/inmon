@@ -72,14 +72,20 @@ class Inmon(Gtk.Window):
 		self.gui()
 
 #Monitor backend
-		if self.prefs["backend"] == "pynputevdev":
-			os.environ['PYNPUT_BACKEND_KEYBOARD'] = "uinput"
-			os.environ['PYNPUT_BACKEND_MOUSE'] = "dummy"
-
-		if local:
-			from pynputmonitor import Monitor
+		if self.prefs["backend"] == "uinput":
+			if local:
+				from uinputmonitor import Monitor
+			else:
+				from inmon.uinputmonitor import Monitor
 		else:
-			from inmon.pynputmonitor import Monitor
+			if self.prefs["backend"] == "pynputevdev":
+				os.environ['PYNPUT_BACKEND_KEYBOARD'] = "uinput"
+				os.environ['PYNPUT_BACKEND_MOUSE'] = "dummy"
+
+			if local:
+				from pynputmonitor import Monitor
+			else:
+				from inmon.pynputmonitor import Monitor
 
 		self.mon = Monitor(self.mon_callback)
 
@@ -115,6 +121,7 @@ class Inmon(Gtk.Window):
 			self.move(x, y)
 
 	def gtk_main_quit(self, *args):
+		self.mon.quit()
 		self.ini.save_prefs(self.get_position()[0], self.get_position()[1], self.prefs)
 		Gtk.main_quit(*args)
 
