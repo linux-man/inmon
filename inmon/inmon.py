@@ -302,11 +302,11 @@ class Inmon(Gtk.Window):
 		try: mod_keys["cmd"] = cmd[self.prefs["cmd_key"]]
 		except: pass
 
-		#print(key)
 		try: key = mod_keys[key]
 		except: pass
 
-		try: key = key.replace("_", " ")
+		try:
+			if len(key) > 1: key = key.replace("_", " ")
 		except: pass
 
 		if self.prefs["dark"]: color = 1 - color
