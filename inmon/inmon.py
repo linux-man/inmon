@@ -27,7 +27,7 @@ home = os.path.dirname(os.path.realpath(__file__))
 
 px_height = 64
 
-local = (len(sys.argv) > 1) and (sys.argv[1] == "local")
+local = __name__ == '__main__'
 
 if local:
 	from config import Config
@@ -461,7 +461,4 @@ class run:
 		Gtk.main()
 
 if local:
-	app = Inmon()
-	app.connect("destroy", Gtk.main_quit)
-	app.show()
-	Gtk.main()
+	run()
