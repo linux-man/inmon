@@ -1,6 +1,6 @@
 # coding=utf-8
 # pynput
-# Copyright (C) 2015-2021 Moses Palmér
+# Copyright (C) 2015-2022 Moses Palmér
 #
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU Lesser General Public License as published by the Free
@@ -733,5 +733,7 @@ class Listener(AbstractListener):
             return KeyCode.from_char(key.char.lower())
         elif isinstance(key, Key) and key.value in _NORMAL_MODIFIERS:
             return _NORMAL_MODIFIERS[key.value]
+        elif isinstance(key, Key) and key.value.vk is not None:
+            return KeyCode.from_vk(key.value.vk)
         else:
             return key

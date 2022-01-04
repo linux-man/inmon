@@ -1,6 +1,6 @@
 # coding=utf-8
 # pynput
-# Copyright (C) 2015-2021 Moses Palmér
+# Copyright (C) 2015-2022 Moses Palmér
 #
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU Lesser General Public License as published by the Free
@@ -32,6 +32,7 @@ from .._util.darwin import (
     get_unicode_to_keycode_map,
     keycode_context,
     ListenerMixin)
+from .._util.darwin_vks import SYMBOLS
 from . import _base
 
 
@@ -329,7 +330,15 @@ class Listener(ListenerMixin, _base.Listener):
         # ...then try characters...
         length, chars = Quartz.CGEventKeyboardGetUnicodeString(
             event, 100, None, None)
-        if length > 0:
+        try:
+            printable = chars.isprintable()
+        except AttributeError:
+            printable = chars.isalnum()
+        if not printable and vk in SYMBOLS \
+                and Quartz.CGEventGetFlags(event) \
+                & Quartz.kCGEventFlagMaskControl:
+            return KeyCode.from_char(SYMBOLS[vk], vk=vk)
+        elif length > 0:
             return KeyCode.from_char(chars, vk=vk)
 
         # ...and fall back on a virtual key code

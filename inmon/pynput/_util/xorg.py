@@ -1,6 +1,6 @@
 # coding=utf-8
 # pynput
-# Copyright (C) 2015-2021 Moses Palmér
+# Copyright (C) 2015-2022 Moses Palmér
 #
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU Lesser General Public License as published by the Free
@@ -423,13 +423,9 @@ class ListenerMixin(object):
     def _stop_platform(self):
         if not hasattr(self, '_context'):
             self.wait()
-        # pylint: disable=W0702; we must ignore errors
-        try:
-            with display_manager(self._display_record) as dm:
-                dm.record_disable_context(self._context)
-        except:
-            pass
-        # pylint: enable=W0702
+
+        # Do this asynchronously to avoid deadlocks
+        self._display_record.record_disable_context(self._context)
 
     def _suppress_start(self, display):
         """Starts suppressing events.
