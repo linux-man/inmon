@@ -7,8 +7,8 @@ from gi.repository import GLib
 from multiprocessing import Pipe, Process
 
 try:
-	import inmon.keyboard
-	import inmon.mouse
+	import inmon.keyboard as keyboard
+	import inmon.mouse as mouse
 except:
 	import keyboard
 	import mouse
