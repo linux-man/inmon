@@ -56,7 +56,7 @@ data_files.extend(themes_files('modern'))
 data_files.extend(themes_files('modern_2'))
 
 setup(name='inmon',
-	version='0.4',
+	version='0.6',
 	description='An Input Monitor',
 	author='Caldas Lopes',
 	author_email='joao.caldas.lopes@gmail.com',

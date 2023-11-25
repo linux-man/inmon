@@ -1,3 +1,9 @@
+inmon (0.6-1) jammy; urgency=low
+
+  *  correction of module name 
+
+ -- Caldas Lopes <joao.caldas.lopes@gmail.com>  Sat, 25 Nov 2023 04:04:55 +0000
+
 inmon (0.4-1) focal; urgency=low
 
   *  boppreh keyboard and mouse backend

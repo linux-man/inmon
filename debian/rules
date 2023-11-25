@@ -7,6 +7,6 @@ export PYBUILD_NAME=inmon
 	dh $@ --with python3 --buildsystem=pybuild
 
 override_dh_auto_test:
-	echo "Skip dh_auto_test"
+	echo "Skip dh_auto_test because the tests rely on a display which is not there"
 
 
